@@ -96,7 +96,7 @@ export default class DayPicker extends Component {
     }
   }
 
-  getStateFromProps = props => {
+  getStateFromProps = (props) => {
     const initialMonth = Helpers.startOfMonth(props.initialMonth);
     let currentMonth = initialMonth;
 
@@ -476,6 +476,7 @@ export default class DayPicker extends Component {
       <div
         {...customProps}
         className={className}
+        styles={this.props.styles}
         ref="dayPicker"
         role="application"
         tabIndex={this.props.canChangeMonth && this.props.tabIndex}
