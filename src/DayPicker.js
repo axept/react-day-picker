@@ -12,6 +12,7 @@ import * as LocaleUtils from './LocaleUtils';
 
 import keys from './keys';
 import DayPickerPropTypes from './PropTypes';
+
 export default class DayPicker extends Component {
   static VERSION = '2.4.1';
 
@@ -22,6 +23,7 @@ export default class DayPicker extends Component {
     disabledDays: PropTypes.func,
 
     modifiers: PropTypes.object,
+    styles: PropTypes.object,
 
     locale: PropTypes.string,
     localeUtils: DayPickerPropTypes.localeUtils,
@@ -61,6 +63,7 @@ export default class DayPicker extends Component {
 
   static defaultProps = {
     tabIndex: 0,
+    styles: {},
     initialMonth: new Date(),
     numberOfMonths: 1,
     locale: 'en',
@@ -397,8 +400,10 @@ export default class DayPicker extends Component {
         tabIndex = this.props.tabIndex;
       }
     }
+
+    const styles = this.props.styles;
+
     const key = `${day.getFullYear()}${day.getMonth()}${day.getDate()}`;
-    const { styles } = this.props;
 
     return (
       <Day
