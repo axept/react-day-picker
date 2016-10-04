@@ -398,12 +398,14 @@ export default class DayPicker extends Component {
       }
     }
     const key = `${day.getFullYear()}${day.getMonth()}${day.getDate()}`;
+    const { styles } = this.props;
+
     return (
       <Day
         key={`${isOutside ? 'outside-' : ''}${key}`}
         day={day}
         modifiers={dayModifiers}
-        styles={this.props.styles}
+        styles={styles}
         empty={isOutside && !this.props.enableOutsideDays && !this.props.fixedWeeks}
 
         tabIndex={tabIndex}
