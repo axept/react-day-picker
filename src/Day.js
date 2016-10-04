@@ -16,7 +16,7 @@ export default function Day({
   tabIndex,
   empty,
   modifiers,
-  style,
+  styles,
   onMouseEnter,
   onMouseLeave,
   onClick,
@@ -32,8 +32,8 @@ export default function Day({
   let className = 'DayPicker-Day';
   className += modifiers.map(modifier => ` ${className}--${modifier}`).join('');
   const customStyle = {};
-  if (style.day) {
-    Object.assign(customStyle, style.day(day));
+  if (styles.day) {
+    Object.assign(customStyle, styles.day(day));
   }
   if (empty) {
     return <div role="gridcell" aria-disabled className={className} />;
@@ -41,7 +41,7 @@ export default function Day({
   return (
     <div
       className={className}
-      style={customStyle}
+      styles={customStyle}
       tabIndex={tabIndex}
       role="gridcell"
       aria-label={ariaLabel}

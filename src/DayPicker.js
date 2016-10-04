@@ -403,7 +403,7 @@ export default class DayPicker extends Component {
         key={`${isOutside ? 'outside-' : ''}${key}`}
         day={day}
         modifiers={dayModifiers}
-        style={this.props.styles}
+        styles={this.props.styles}
         empty={isOutside && !this.props.enableOutsideDays && !this.props.fixedWeeks}
 
         tabIndex={tabIndex}
@@ -476,7 +476,6 @@ export default class DayPicker extends Component {
       <div
         {...customProps}
         className={className}
-        styles={this.props.styles}
         ref="dayPicker"
         role="application"
         tabIndex={this.props.canChangeMonth && this.props.tabIndex}
